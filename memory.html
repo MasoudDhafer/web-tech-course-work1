@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Memory Game — FlagMaster</title>
+  <meta name="description" content="Match pairs of world flags in this memory card game. Three difficulty levels with a timer and high score tracking." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===== Navigation ===== -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">🌍 FlagMaster</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="memory.html">Memory Game</a></li>
+        <li><a href="flashcards.html">Flashcards</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="leaderboard.html">Leaderboard</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ===== Difficulty Selection ===== -->
+    <div id="difficulty-screen">
+      <div class="page-header">
+        <h1>Memory Game</h1>
+        <p>Flip cards to find matching flag pairs — then try to beat your best time.</p>
+      </div>
+      <div class="difficulty-screen">
+        <h2>Choose Difficulty</h2>
+        <p>More pairs = harder — but also more flags to learn!</p>
+        <div class="difficulty-cards">
+          <button class="difficulty-card" data-difficulty="easy">
+            <div class="diff-icon">🟢</div>
+            <div class="diff-name">Easy</div>
+            <div class="diff-desc">4 × 4 grid &mdash; 8 pairs</div>
+          </button>
+          <button class="difficulty-card" data-difficulty="medium">
+            <div class="diff-icon">🟡</div>
+            <div class="diff-name">Medium</div>
+            <div class="diff-desc">6 × 4 grid &mdash; 12 pairs</div>
+          </button>
+          <button class="difficulty-card" data-difficulty="hard">
+            <div class="diff-icon">🔴</div>
+            <div class="diff-name">Hard</div>
+            <div class="diff-desc">6 × 6 grid &mdash; 18 pairs</div>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== Game Screen (hidden until difficulty chosen) ===== -->
+    <div id="game-screen" class="hidden">
+
+      <!-- HUD bar -->
+      <div class="game-hud">
+        <div class="hud-stat">
+          <div class="hud-label">Time</div>
+          <div class="hud-value" id="timer">00:00</div>
+        </div>
+        <div class="hud-sep"></div>
+        <div class="hud-stat">
+          <div class="hud-label">Moves</div>
+          <div class="hud-value" id="moves">0</div>
+        </div>
+        <div class="hud-sep"></div>
+        <div class="hud-stat">
+          <div class="hud-label">Pairs</div>
+          <div class="hud-value" id="pairs">0 / 0</div>
+        </div>
+        <div class="hud-sep"></div>
+        <button class="btn btn-outline btn-sm" id="restart-btn">&#8635; Menu</button>
+      </div>
+
+      <!-- Card board -->
+      <div class="game-wrapper">
+        <div id="game-board"></div>
+      </div>
+
+    </div>
+
+    <!-- ===== Win Modal (hidden until win) ===== -->
+    <div class="modal-overlay hidden" id="win-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal-box">
+        <h2 id="modal-title">&#127881; You Won!</h2>
+        <p class="modal-difficulty" id="modal-difficulty"></p>
+        <div class="modal-rating" id="modal-rating"></div>
+        <div class="modal-stats">
+          <div class="modal-stat">
+            <div class="stat-val" id="final-time">00:00</div>
+            <div class="stat-lbl">Time</div>
+          </div>
+          <div class="modal-stat">
+            <div class="stat-val" id="final-moves">0</div>
+            <div class="stat-lbl">Moves</div>
+          </div>
+        </div>
+        <input
+          type="text"
+          class="modal-input"
+          id="player-name"
+          placeholder="Enter your name to save score…"
+          maxlength="20"
+          autocomplete="off"
+        />
+        <div class="modal-buttons">
+          <button class="btn btn-primary" id="save-score-btn">Save Score</button>
+          <button class="btn btn-outline" id="play-again-btn">Play Again</button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>🌍 FlagMaster &mdash; Web Technologies Coursework 2025–2026</p>
+      <p>Flag images by <a href="https://flagcdn.com" target="_blank" rel="noopener">flagcdn.com</a></p>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/memory.js"></script>
+</body>
+</html>

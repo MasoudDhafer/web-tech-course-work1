@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leaderboard — FlagMaster</title>
+  <meta name="description" content="FlagMaster high scores — fastest completion times across all difficulty levels." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===== Navigation ===== -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">🌍 FlagMaster</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="memory.html">Memory Game</a></li>
+        <li><a href="flashcards.html">Flashcards</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="leaderboard.html">Leaderboard</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+    </div>
+  </nav>
+
+  <main>
+    <div class="page-header">
+      <h1>&#127942; Leaderboard</h1>
+      <p>Top 10 fastest times for each difficulty, saved in your browser.</p>
+    </div>
+
+    <div class="leaderboard-layout">
+
+      <!-- Clear button -->
+      <div class="lb-toolbar">
+        <button class="btn btn-outline btn-sm" id="clear-scores-btn">Clear All Scores</button>
+      </div>
+
+      <!-- Difficulty tabs -->
+      <div class="tab-bar" role="tablist">
+        <button class="tab-btn" role="tab" data-difficulty="easy"   aria-selected="false">&#129001; Easy</button>
+        <button class="tab-btn" role="tab" data-difficulty="medium" aria-selected="false">&#129000; Medium</button>
+        <button class="tab-btn" role="tab" data-difficulty="hard"   aria-selected="false">&#128997; Hard</button>
+      </div>
+
+      <!-- Scores container -->
+      <div id="scores-container">
+        <!-- Populated by leaderboard.js -->
+      </div>
+
+      <!-- CTA if no scores -->
+      <div style="text-align:center; margin-top:2rem;">
+        <a href="memory.html" class="btn btn-primary">Play Memory Game</a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>🌍 FlagMaster &mdash; Web Technologies Coursework 2025–2026</p>
+      <p>Flag images by <a href="https://flagcdn.com" target="_blank" rel="noopener">flagcdn.com</a></p>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/leaderboard.js"></script>
+</body>
+</html>

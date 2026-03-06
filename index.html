@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FlagMaster — Learn the World's Flags</title>
+  <meta name="description" content="Test your knowledge of world flags with a memory matching game and interactive flashcard study mode." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===== Navigation ===== -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">🌍 FlagMaster</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="memory.html">Memory Game</a></li>
+        <li><a href="flashcards.html">Flashcards</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="leaderboard.html">Leaderboard</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ===== Hero ===== -->
+    <section class="hero">
+      <div class="container">
+        <h1>Learn the World's <span class="highlight">Flags</span></h1>
+        <p class="hero-subtitle">
+          Match flag pairs against the clock or study with interactive flashcards.
+          38 countries across 5 continents — how many can you master?
+        </p>
+        <div class="hero-stats" id="hero-stats">
+          <!-- Populated by index.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Game Modes ===== -->
+    <section class="modes">
+      <div class="container">
+        <div class="mode-cards">
+
+          <div class="mode-card">
+            <div class="mode-icon">🃏</div>
+            <h2>Memory Game</h2>
+            <p>Flip cards to find matching flag pairs. Race the clock across three difficulty levels.</p>
+            <ul class="mode-features">
+              <li>✓ Easy, Medium &amp; Hard grids</li>
+              <li>✓ Live timer &amp; move counter</li>
+              <li>✓ Star rating on completion</li>
+              <li>✓ High scores saved locally</li>
+            </ul>
+            <a href="memory.html" class="btn btn-primary">Play Now</a>
+          </div>
+
+          <div class="mode-card">
+            <div class="mode-icon">📚</div>
+            <h2>Flashcards</h2>
+            <p>Study flags at your own pace. Reveal the country name and track what you know.</p>
+            <ul class="mode-features">
+              <li>✓ 38 countries to study</li>
+              <li>✓ Capital city &amp; fun fact per card</li>
+              <li>✓ Filter by continent</li>
+              <li>✓ Progress saved between sessions</li>
+            </ul>
+            <a href="flashcards.html" class="btn btn-secondary">Study Now</a>
+          </div>
+
+          <div class="mode-card">
+            <div class="mode-icon">🧠</div>
+            <h2>Quiz</h2>
+            <p>See a flag, pick the correct country from 4 options. 10 questions per round.</p>
+            <ul class="mode-features">
+              <li>✓ Randomised every round</li>
+              <li>✓ Score &amp; streak tracking</li>
+              <li>✓ Confetti on a perfect 10!</li>
+              <li>✓ Best streak saved locally</li>
+            </ul>
+            <a href="quiz.html" class="btn btn-primary">Take Quiz</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Personal Stats ===== -->
+    <section class="global-stats">
+      <div class="container">
+        <h2 class="section-title">Your Progress</h2>
+        <div class="stats-grid" id="stats-grid">
+          <!-- Populated by index.js -->
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>🌍 FlagMaster &mdash; Web Technologies Coursework 2025–2026</p>
+      <p>Flag images by <a href="https://flagcdn.com" target="_blank" rel="noopener">flagcdn.com</a></p>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>

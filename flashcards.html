@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flashcards — FlagMaster</title>
+  <meta name="description" content="Study world flags with interactive flashcards. Track your progress across 38 countries and 5 continents." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===== Navigation ===== -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">🌍 FlagMaster</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="memory.html">Memory Game</a></li>
+        <li><a href="flashcards.html">Flashcards</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="leaderboard.html">Leaderboard</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+    </div>
+  </nav>
+
+  <main>
+    <div class="page-header">
+      <h1>Flashcards</h1>
+      <p>Tap a card (or "Reveal") to see the country. Mark it as known or unknown to track your progress.</p>
+    </div>
+
+    <div class="flashcard-layout">
+
+      <!-- Progress stats row -->
+      <div class="fc-progress-stats">
+        <div class="fc-prog-stat known">
+          <div class="num" id="stat-known">0</div>
+          <div class="lbl">Known</div>
+        </div>
+        <div class="fc-prog-stat unknown">
+          <div class="num" id="stat-unknown">0</div>
+          <div class="lbl">Learning</div>
+        </div>
+        <div class="fc-prog-stat total">
+          <div class="num" id="stat-total">38</div>
+          <div class="lbl">Total</div>
+        </div>
+      </div>
+
+      <!-- Continent filter -->
+      <div class="continent-filter" id="continent-filter">
+        <!-- Populated by flashcards.js -->
+      </div>
+
+      <!-- ===== Active Study Area ===== -->
+      <div id="flashcard-main">
+
+        <!-- Progress bar -->
+        <div class="fc-progress-bar-wrap">
+          <div class="fc-progress-bar" id="fc-progress-bar"></div>
+        </div>
+        <div class="fc-counter" id="fc-counter">1 / 38</div>
+
+        <!-- The card itself -->
+        <div class="flashcard-container">
+          <div class="flashcard" id="flashcard" role="button" aria-label="Flashcard — click to reveal">
+
+            <div class="flashcard-inner">
+              <!-- Front: flag image -->
+              <div class="fc-front">
+                <img id="fc-flag-img" src="" alt="Flag" />
+                <span class="fc-hint">Tap card or click Reveal to see the answer</span>
+              </div>
+              <!-- Back: country name -->
+              <div class="fc-back">
+                <img id="fc-back-flag" src="" alt="" />
+                <div class="fc-country-name" id="fc-country-name"></div>
+                <div class="fc-continent-label" id="fc-continent-label"></div>
+                <div class="fc-capital" id="fc-capital"></div>
+                <div class="fc-fact" id="fc-fact"></div>
+              </div>
+            </div>
+
+          </div>
+        </div><!-- /flashcard-container -->
+
+        <!-- Reveal button (shown before flip) -->
+        <div class="fc-controls">
+          <button class="btn btn-primary" id="reveal-btn">Reveal Answer</button>
+        </div>
+
+        <!-- Answer buttons (shown after flip) -->
+        <div class="fc-actions hidden" id="fc-answer-btns">
+          <button class="btn btn-success" id="know-btn">&#10003; Got it!</button>
+          <button class="btn btn-error"   id="dontknow-btn">&#10007; Still learning</button>
+          <button class="btn btn-outline btn-sm" id="skip-btn">Skip &#8594;</button>
+        </div>
+
+        <!-- Reset / controls row -->
+        <div class="fc-controls" style="margin-top:1.5rem;">
+          <button class="btn btn-outline btn-sm" id="reset-btn">Reset Progress</button>
+        </div>
+
+      </div><!-- /#flashcard-main -->
+
+      <!-- ===== Completion Screen ===== -->
+      <div class="fc-complete hidden" id="fc-complete">
+        <div class="complete-icon">&#127881;</div>
+        <h2>Deck Complete!</h2>
+        <p id="fc-complete-msg">You went through all the cards in this deck.</p>
+        <div class="final-score" id="fc-final-score"></div>
+        <p>flags known out of this deck</p>
+        <br />
+        <div class="fc-actions" style="justify-content:center; margin-top:1rem;">
+          <button class="btn btn-primary" id="restart-deck-btn">Restart Deck</button>
+          <button class="btn btn-outline" id="goto-memory-btn">Try Memory Game</button>
+        </div>
+      </div>
+
+    </div><!-- /.flashcard-layout -->
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>🌍 FlagMaster &mdash; Web Technologies Coursework 2025–2026</p>
+      <p>Flag images by <a href="https://flagcdn.com" target="_blank" rel="noopener">flagcdn.com</a></p>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/flashcards.js"></script>
+</body>
+</html>
